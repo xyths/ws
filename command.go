@@ -11,9 +11,9 @@ import (
 
 func run(c *cli.Context) error {
 	ping := c.Bool(pingFlag.Name)
-	log.Printf("ping: %v", ping)
+	//log.Printf("ping: %v", ping)
 	url := c.Args().Get(0)
-	log.Printf("connect to %s", url)
+	//log.Printf("connect to %s", url)
 	var header http.Header
 	headers := c.StringSlice(headerFlag.Name)
 	if headers != nil {
@@ -24,8 +24,8 @@ func run(c *cli.Context) error {
 				header.Add(tokens[0], tokens[1])
 			}
 		}
-		log.Printf("headers: %v", headers)
-		log.Printf("header: %v", header)
+		//log.Printf("headers: %v", headers)
+		//log.Printf("header: %v", header)
 	}
 
 	conn, _, err := websocket.DefaultDialer.Dial(url, header)
@@ -79,6 +79,4 @@ func run(c *cli.Context) error {
 			}
 		}
 	}
-
-	//return nil
 }

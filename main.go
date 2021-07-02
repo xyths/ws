@@ -16,13 +16,12 @@ func init() {
 	app = &cli.App{
 		Name:    filepath.Base(os.Args[0]),
 		Usage:   "a WebSocket client command line interface",
-		Version: "0.1.1",
+		Version: "0.1.2",
 		Action:  run,
 	}
 
 	app.Flags = []cli.Flag{
 		pingFlag,
-		//urlFlag,
 		headerFlag,
 	}
 }
